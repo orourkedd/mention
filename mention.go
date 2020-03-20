@@ -85,12 +85,13 @@ func isTerminator(r rune, terminator ...rune) bool {
 // strings
 func uniquify(in []string) (out []string) {
 	for _, i := range in {
+	next:
 		if i == "" {
 			continue
 		}
 		for _, o := range out {
 			if i == o {
-				continue
+				continue next
 			}
 		}
 		out = append(out, i)
